@@ -9,12 +9,13 @@
 
     <ul>
         {% for flight in flights %}
-            <li>
-                <a href="{{ url_for('flight', flight_id=flight.id) }}">
-                    {{ flight.origin }} to {{ flight.destination }}
-                </a>
-            </li>
+        <li>
+            <a href="{{ url_for('flight', flight_id=flight.id) }}">
+                {{ flight.origin }} to {{ flight.destination }}
+            </a>
+            <a href="{{ url_for('flight_api', flight_id=flight.id) }}">
+                - API</a>
+        </li>
         {% endfor %}
     </ul>
-
 {% endblock %}
